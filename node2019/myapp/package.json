@@ -1,0 +1,22 @@
+{
+  "name": "myapp",
+  "version": "1.0.0",
+  "description": "express server app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ambeche/web-tech-course.git"
+  },
+  "keywords": [
+    "[]"
+  ],
+  "author"\"\"",
+  "license": "GPL-3,0",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
