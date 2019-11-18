@@ -1,14 +1,32 @@
-'use strict'
+'use strict';
+
+
+//console.log('my powerful app.');
+const connection = require('./model/db.js');
 
 const express = require('express');
-const app = express();
+
 const port = 3000;
+const app = express();
+
 app.use(express.static('public'));
 
-app.get('/', (req, res) => res.send('Hellow from my Node server!'));
+app.get('/busstop', async (req, res) => {
+    try{
+        const [results, fields] = await connection.query(
+                'SELECT * FROM busschedule.busstop');
 
-app.get('/demo', (req, res) => {
-    console.log('request', req);
-    res.send('demo')});
+                        console.log(results);
+                        console.log(fields);
+                        res.json(results);
+} catch (e) {
+        console.log(e);
+        res.send('db error :(');
+}
 
-app.listen(port, () => console.log(`server app started, listening on port ${port}!`));
+
+});
+
+app.listen(3000, () => {
+	console.log('server app start?');
+});
