@@ -1,12 +1,31 @@
 <!DOCTYPE html>
-<html lang = "en">
-  <head>
-      <title>YummySalads</title>
-      <meta charset = "utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel = "stylesheet" href = "index.css" type ="text/css">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cherry+Swash">
-  </head>
-  <body><h1>Welcome to my new page!</h1></body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>demo</title>
+</head>
+<body>
+  <h1>
+    Demo static content
+  </h1>
+  <h2>
+    get all
+  </h2>
+  <a href="/busstop">get all</a>
+  <h2>
+    search
+  </h2>
+  <form action="/busstop" method="get">
+    <input type="text" name="name" placeholder="dog">
+    <input type="submit" value="search">
+  </form>
+  <h2>
+    insert
+  </h2>
+  <form action="/busstop" method="post">
+    <input type="text" name="name" placeholder="frog">
+    <input type="submit" value="insert">
+  </form>
+</body>
 </html>
 
