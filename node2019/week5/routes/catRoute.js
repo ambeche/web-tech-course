@@ -1,11 +1,9 @@
 'use strict';
 const express = require('express');
 const router = express.Router();
+const catController = require('../controllers/catController')
 
-
-router.get('/', (req, res) => {
-    res.send('With this endpoint you can get a cat ');
-  });
+router.get('/', catController.cat_list_get);
 
 router.get('/:id', (req, res) => {
   res.send('You reqested a cat whose id is ' + req.params.id);
