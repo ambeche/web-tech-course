@@ -23,9 +23,29 @@ const cat_create_post = async (req, res) => {
 const response = await catModel.addCat(params);
 await res.json(response);
 };
-   
+
+const cat_create_put = async (req, res) => {
+  const params = [
+  req.body.name,
+  req.body.age,
+  req.body.weight,
+  req.body.owner,
+  req.body.id
+];
+const response = await catModel.updateCat(params);
+await res.json(response);
+};
+
+const cat_delete = async (req, res) => {
+  const params = [req.params.id];
+  const cat = await catModel.deleteCat(params);
+  await res.json(cat);
+};
+
 module.exports = {
   cat_list_get,
   cat_create_post,
   cat_get,
+  cat_create_put,
+  cat_delete,
 };

@@ -39,8 +39,36 @@ const addCat = async (params) => {
   }
 };
 
+const updateCat = async (params) => {
+  try {
+    const [rows] = await promisePool.execute(
+        `UPDATE wop_cat  SET name = ?,  age = ?, weight = ?, owner = ? WHERE wop_cat.cat_id = ?;`,
+        params,
+    );
+    return rows;
+  } catch (e) {
+    console.log('error', e.message);
+    return {error: 'error in database query'};
+  }
+};
+
+const deleteCat = async (params) => {
+  try {
+    const [rows] = await promisePool.execute(
+        `DELETE FROM wop_cat WHERE wop_cat.cat_id = ?;`,
+        params,
+    );
+    return rows;
+  } catch (e) {
+    console.log('error', e.message);
+    return {error: 'error in database query'};
+  }
+};
+
 module.exports = {
   getAllCats,
   getCat,
   addCat,
+  updateCat,
+  deleteCat,
 };
