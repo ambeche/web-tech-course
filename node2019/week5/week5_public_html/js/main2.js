@@ -1,5 +1,5 @@
 'use strict';
-const url = 'http://localhost:3000'; // change url when uploading to server
+const url = 'http://10.114.32.156/app'; // change url when uploading to server
 
 // select existing html elements
 const addForm = document.querySelector('#addCatForm');
@@ -14,7 +14,7 @@ const createCatCards = (cats) => {
   cats.forEach((cat) => {
     // create li with DOM methods
     const img = document.createElement('img');
-    img.src = url + '/' + cat.filename;
+    img.src = cat.filename;
     img.alt = cat.name;
     img.classList.add('resp');
 

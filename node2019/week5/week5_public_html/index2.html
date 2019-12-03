@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf8">
   <title>Example</title>
-  <link href="./css/style2.css" rel="stylesheet">
+  <link href="./css/style2.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="container">
@@ -15,7 +15,7 @@
   <div class="forms">
     <div class="form-wrapper">
       <h3>Add user</h3>
-      <form action="http://localhost:3000/user" method="post" class="light-border" id="addUserForm">
+      <form action="http://10.114.32.156/app/user" method="post" class="light-border" id="addUserForm">
         <input class="light-border" type="text" name="name" placeholder="Name" required>
         <input class="light-border" type="email" name="email" placeholder="email" required>
         <input class="light-border" type="password" name="passwd" placeholder="Password" required>
@@ -25,7 +25,7 @@
 
     <div class="form-wrapper">
       <h3>Add cat</h3>
-      <form action="http://localhost:3000/cat"
+      <form action="http://10.114.32.156/app/cat"
             method="post"
             class="light-border"
             enctype="multipart/form-data"
@@ -43,7 +43,7 @@
 
     <div class="form-wrapper">
       <h3>Modify cat</h3>
-      <form action="http://localhost:3000/cat" id="modCatForm" class="light-border">
+      <form action="http://10.114.32.156/app/cat" id="modCatForm" class="light-border">
         <input class="light-border" type="text" name="name" placeholder="Name" required>
         <input class="light-border" type="text" name="age" placeholder="Age" required>
         <input class="light-border" type="text" name="weight" placeholder="Weight" required>

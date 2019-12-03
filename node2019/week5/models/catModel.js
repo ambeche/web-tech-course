@@ -29,13 +29,12 @@ const getCat = async (params) => {
 const addCat = async (params) => {
   try {
     const [rows] = await promisePool.execute(
-        'INSERT INTO wop_cat (name, age, weight, owner, filename) VALUES (?, ?, ?, ?, ?);',
+        'INSERT INTO wop_cat (name, age, weight, owner, filename, coords) VALUES (?,?, ?, ?, ?, ?);',
         params,
     );
     return rows;
   } catch (e) {
     console.log('error', e.message);
-    return {error: 'error in database query'};
   }
 };
 
